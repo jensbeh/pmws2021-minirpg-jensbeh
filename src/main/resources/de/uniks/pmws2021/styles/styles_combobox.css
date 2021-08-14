@@ -1,0 +1,20 @@
+.combo-box{
+    -fx-border-color:transparent;
+    -fx-border-style:solid;
+    -fx-border-radius: 15;
+    -fx-border-width:3;
+}
+.combo-box .arrow{
+    -fx-background-color:#2E64FE;
+}
+.combo-box .arrow-button{
+    -fx-background-color:white;
+    -fx-border-style:none;
+}
+.combo-box .arrow-button{
+    -fx-background-color:white;
+}
+.combo-box .list-cell{
+    -fx-background-color:white;
+}
+    -fx-border-radius: 15;

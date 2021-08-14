@@ -1,0 +1,110 @@
+<svg width="237px" height="565px"
+ viewBox="0.00 0.00 236.79 565.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0) translate(4 561)">
+<title>de.uniks.pmws2021.model</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-561 232.79,-561 232.79,4 -4,4"/>
+<!-- Dungeon -->
+<g id="node1" class="node">
+<title>Dungeon</title>
+<polygon fill="none" stroke="black" points="54.5,-531 54.5,-553 131.5,-553 131.5,-531 54.5,-531"/>
+<text text-anchor="start" x="67.34" y="-537.4" font-family="Times,serif" font-size="14.00">Dungeon</text>
+<polygon fill="none" stroke="black" points="54.5,-509 54.5,-531 131.5,-531 131.5,-509 54.5,-509"/>
+<text text-anchor="start" x="57.5" y="-515.4" font-family="Times,serif" font-size="14.00">name :String</text>
+</g>
+<!-- Enemy -->
+<g id="node2" class="node">
+<title>Enemy</title>
+<polygon fill="none" stroke="black" points="90.5,-443 90.5,-465 172.5,-465 172.5,-443 90.5,-443"/>
+<text text-anchor="start" x="111.67" y="-449.4" font-family="Times,serif" font-size="14.00">Enemy</text>
+<polygon fill="none" stroke="black" points="90.5,-337 90.5,-443 172.5,-443 172.5,-337 90.5,-337"/>
+<text text-anchor="start" x="93.5" y="-427.4" font-family="Times,serif" font-size="14.00">name :String</text>
+<text text-anchor="start" x="93.5" y="-410.6" font-family="Times,serif" font-size="14.00">lp :int</text>
+<text text-anchor="start" x="93.5" y="-393.8" font-family="Times,serif" font-size="14.00">coins :int</text>
+<text text-anchor="start" x="93.5" y="-377" font-family="Times,serif" font-size="14.00">atk :int</text>
+<text text-anchor="start" x="93.5" y="-360.2" font-family="Times,serif" font-size="14.00">def :int</text>
+<text text-anchor="start" x="93.5" y="-343.4" font-family="Times,serif" font-size="14.00">stance :String</text>
+</g>
+<!-- Enemy&#45;&gt;Dungeon -->
+<g id="edge1" class="edge">
+<title>Enemy&#45;&gt;Dungeon</title>
+<path fill="none" stroke="black" d="M110.97,-469.37C107.12,-482.02 103.32,-494.49 100.18,-504.81"/>
+<text text-anchor="middle" x="76.07" y="-492.21" font-family="Times,serif" font-size="14.00">dungeon</text>
+<text text-anchor="middle" x="82.79" y="-473.57" font-family="Times,serif" font-size="14.00">enemies *</text>
+</g>
+<!-- Enemy&#45;&gt;Enemy -->
+<g id="edge2" class="edge">
+<title>Enemy&#45;&gt;Enemy</title>
+<path fill="none" stroke="black" d="M180.58,-377.41C190.99,-379.81 198.5,-387.67 198.5,-401 198.5,-414.33 190.99,-422.19 180.58,-424.59"/>
+<text text-anchor="middle" x="204.69" y="-411.99" font-family="Times,serif" font-size="14.00">previous</text>
+<text text-anchor="middle" x="192.63" y="-364.81" font-family="Times,serif" font-size="14.00">next</text>
+</g>
+<!-- Hero -->
+<g id="node3" class="node">
+<title>Hero</title>
+<polygon fill="none" stroke="black" points="53.5,-270.5 53.5,-292.5 131.5,-292.5 131.5,-270.5 53.5,-270.5"/>
+<text text-anchor="start" x="78.51" y="-276.9" font-family="Times,serif" font-size="14.00">Hero</text>
+<polygon fill="none" stroke="black" points="53.5,-197.5 53.5,-270.5 131.5,-270.5 131.5,-197.5 53.5,-197.5"/>
+<text text-anchor="start" x="56.5" y="-254.9" font-family="Times,serif" font-size="14.00">name :String</text>
+<text text-anchor="start" x="56.5" y="-238.1" font-family="Times,serif" font-size="14.00">lp :int</text>
+<text text-anchor="start" x="56.5" y="-221.3" font-family="Times,serif" font-size="14.00">coins :int</text>
+<text text-anchor="start" x="56.5" y="-204.5" font-family="Times,serif" font-size="14.00">mode :String</text>
+</g>
+<!-- Hero&#45;&gt;Dungeon -->
+<g id="edge3" class="edge">
+<title>Hero&#45;&gt;Dungeon</title>
+<path fill="none" stroke="black" d="M79.4,-297.43C76.95,-309.04 74.76,-321.38 73.5,-333 66.98,-393.09 64.41,-409.24 73.5,-469 75.34,-481.06 79.1,-494.02 82.8,-504.88"/>
+<text text-anchor="middle" x="106.91" y="-492.28" font-family="Times,serif" font-size="14.00">dungeon</text>
+<text text-anchor="middle" x="66.96" y="-301.63" font-family="Times,serif" font-size="14.00">hero</text>
+</g>
+<!-- Hero&#45;&gt;Enemy -->
+<g id="edge4" class="edge">
+<title>Hero&#45;&gt;Enemy</title>
+<path fill="none" stroke="black" d="M105.38,-297.19C108.28,-308.63 111.41,-320.94 114.46,-332.94"/>
+<text text-anchor="middle" x="88.8" y="-320.34" font-family="Times,serif" font-size="14.00">attacking</text>
+<text text-anchor="middle" x="131.04" y="-301.39" font-family="Times,serif" font-size="14.00">attacking</text>
+</g>
+<!-- HeroStat -->
+<g id="node4" class="node">
+<title>HeroStat</title>
+<polygon fill="none" stroke="black" points="63.5,-132 63.5,-154 121.5,-154 121.5,-132 63.5,-132"/>
+<text text-anchor="start" x="67.62" y="-138.4" font-family="Times,serif" font-size="14.00">HeroStat</text>
+<polygon fill="none" stroke="black" points="63.5,-76 63.5,-132 121.5,-132 121.5,-76 63.5,-76"/>
+<text text-anchor="start" x="66.5" y="-116.4" font-family="Times,serif" font-size="14.00">level :int</text>
+<text text-anchor="start" x="66.5" y="-99.6" font-family="Times,serif" font-size="14.00">value :int</text>
+<text text-anchor="start" x="66.5" y="-82.8" font-family="Times,serif" font-size="14.00">cost :int</text>
+</g>
+<!-- HeroStat&#45;&gt;Hero -->
+<g id="edge5" class="edge">
+<title>HeroStat&#45;&gt;Hero</title>
+<path fill="none" stroke="black" d="M92.5,-158.08C92.5,-169.49 92.5,-181.98 92.5,-193.82"/>
+<text text-anchor="middle" x="80.06" y="-181.22" font-family="Times,serif" font-size="14.00">hero</text>
+<text text-anchor="middle" x="74.81" y="-162.28" font-family="Times,serif" font-size="14.00">stats *</text>
+</g>
+<!-- AttackStat -->
+<g id="node5" class="node">
+<title>AttackStat</title>
+<polygon fill="none" stroke="black" points="8.5,-10 8.5,-32 73.5,-32 73.5,-10 8.5,-10"/>
+<text text-anchor="start" x="11.45" y="-16.4" font-family="Times,serif" font-size="14.00">AttackStat</text>
+<polygon fill="none" stroke="black" points="8.5,-4 8.5,-10 73.5,-10 73.5,-4 8.5,-4"/>
+</g>
+<!-- AttackStat&#45;&gt;HeroStat -->
+<g id="edge6" class="edge">
+<title>AttackStat&#45;&gt;HeroStat</title>
+<path fill="none" stroke="black" d="M50.04,-36.42C54.21,-44.05 59.35,-53.44 64.59,-63.01"/>
+<polygon fill="none" stroke="black" points="61.54,-64.73 69.41,-71.82 67.68,-61.36 61.54,-64.73"/>
+</g>
+<!-- DefenceStat -->
+<g id="node6" class="node">
+<title>DefenceStat</title>
+<polygon fill="none" stroke="black" points="107.5,-10 107.5,-32 181.5,-32 181.5,-10 107.5,-10"/>
+<text text-anchor="start" x="110.3" y="-16.4" font-family="Times,serif" font-size="14.00">DefenceStat</text>
+<polygon fill="none" stroke="black" points="107.5,-4 107.5,-10 181.5,-10 181.5,-4 107.5,-4"/>
+</g>
+<!-- DefenceStat&#45;&gt;HeroStat -->
+<g id="edge7" class="edge">
+<title>DefenceStat&#45;&gt;HeroStat</title>
+<path fill="none" stroke="black" d="M134.96,-36.42C130.79,-44.05 125.65,-53.44 120.41,-63.01"/>
+<polygon fill="none" stroke="black" points="117.32,-61.36 115.59,-71.82 123.46,-64.73 117.32,-61.36"/>
+</g>
+</g>
+</svg>

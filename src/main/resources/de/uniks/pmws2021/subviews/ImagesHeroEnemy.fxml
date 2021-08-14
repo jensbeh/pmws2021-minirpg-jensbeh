@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxWidth="600.0" minWidth="600.0" prefHeight="200.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView id="imageview_hero" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" x="367.0" y="42.0">
+         <image>
+            <Image url="@../images/Hero1.png" />
+         </image>
+      </ImageView>
+      <ImageView id="imageview_enemy" fitHeight="233.0" fitWidth="267.0" pickOnBounds="true" preserveRatio="true" x="86.0" y="6.0">
+         <image>
+            <Image url="@../images/Dragon.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

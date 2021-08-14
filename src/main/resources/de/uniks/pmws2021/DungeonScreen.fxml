@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="bodybg" stylesheets="@styles/styles_anchor.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutY="-1.0" maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox id="hbox_topbar" maxHeight="100.0" maxWidth="600.0" prefHeight="100.0" prefWidth="600.0">
+               <children>
+                  <Button id="button_leave" mnemonicParsing="false" prefHeight="29.0" prefWidth="70.0" stylesheets="@styles/styles_grey.css" text="Leave">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <VBox prefHeight="97.0" prefWidth="120.0">
+                     <children>
+                        <Label id="label_dungeonname" prefHeight="17.0" prefWidth="121.0" text="Chamber of R'leyh" textFill="WHITE">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label id="label_battle" prefHeight="17.0" prefWidth="77.0" text="Battle 2/5" textFill="WHITE">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="198.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox id="vbox_heroStats" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #E6E6E6; -fx-background-radius: 15; -fx-opacity: 0.8;">
+                     <children>
+                        <fx:include source="subviews/HeroStatView.fxml" />
+                        <Line id="line_heroStats" endY="4.0" fill="BLACK" startX="205.0" startY="4.0" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="3.0" top="3.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox id="hbox_imagesContainer" maxHeight="200.0" maxWidth="600.0" minHeight="200.0" minWidth="600.0" prefHeight="200.0" prefWidth="600.0">
+               <children>
+                  <fx:include source="subviews/ImagesHeroEnemy.fxml" />
+               </children>
+            </HBox>
+            <HBox id="hbox_bottombar" maxHeight="90.0" maxWidth="594.0" minHeight="90.0" minWidth="594.0" prefHeight="90.0" prefWidth="594.0" style="-fx-background-color: #E6E6E6; -fx-background-radius: 5; -fx-opacity: 0.8;">
+               <children>
+                  <HBox id="hbox_EnemyViewContainer" prefHeight="90.0" prefWidth="254.0">
+                     <children>
+                        <fx:include layoutX="28.0" layoutY="2.0" source="subviews/EnemyView.fxml" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="18.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox id="hbox_HeroViewContainer" prefHeight="90.0" prefWidth="346.0">
+                     <children>
+                        <fx:include source="subviews/HeroView.fxml" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="8.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Pane layoutX="56.0" layoutY="101.0" prefHeight="180.0" prefWidth="491.0">
+         <children>
+            <ImageView id="imageview_endImage" fitHeight="167.0" fitWidth="434.0" pickOnBounds="true" preserveRatio="true" x="33.0" y="11.0">
+               <image>
+                  <Image url="@images/victory.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

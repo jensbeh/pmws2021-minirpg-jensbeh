@@ -1,0 +1,29 @@
+.selecthero{
+    -fx-text-fill: white;
+    -fx-background-color: #FE9A2E;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5;
+}
+
+.selecthero:hover{
+    -fx-text-fill: black;
+    -fx-background-color: #F5D0A9;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5;
+}
+
+
+
+.selecthero:pressed{
+    -fx-text-fill: black;
+    -fx-background-color: #F7BE81;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5;
+}
+
+.selecthero:focused{
+    -fx-background-color: #B40431;
+}

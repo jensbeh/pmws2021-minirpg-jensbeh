@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<VBox maxHeight="600.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox id="hbox_create_and_start_hero" prefHeight="231.0" prefWidth="588.0">
+         <children>
+            <fx:include source="subviews/CreateNewHero.fxml" />
+         </children>
+      </HBox>
+      <Line startX="600.0" />
+      <HBox id="hbox_create_hero" prefWidth="601.0">
+         <children>
+            <fx:include source="subviews/ChooseExistingHero.fxml" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,45 @@
+.progress-bar {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10, 10, 10, 10;
+    -fx-border-color: black;
+    -fx-border-radius: 5, 5, 10, 10;
+}
+
+.progress-bar .track{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5, 5, 0, 0;
+}
+
+.progress-bar .bar {
+    -fx-background-insets: 0, 0, 0, 0; 
+    -fx-background-radius: 5, 5, 0, 0;
+}
+
+.bar_100 {
+    -fx-accent: #00FF00;
+}
+.bar_90 {
+    -fx-accent: #40FF00;
+}
+.bar_80 {
+    -fx-accent: #80FF00;
+}
+.bar_70 {
+    -fx-accent: #BFFF00;
+}
+.bar_60 {
+    -fx-accent: #FFFF00;
+}
+.bar_50 {
+    -fx-accent: #FFBF00;
+}
+.bar_40 {
+    -fx-accent: #FF8000;
+}
+.bar_30 {
+    -fx-accent: #FF4000;
+}
+.bar_20 {
+    -fx-accent: #FF0000;
+}

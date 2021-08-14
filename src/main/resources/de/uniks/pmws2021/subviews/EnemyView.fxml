@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="69.0" prefWidth="221.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane alignment="CENTER_RIGHT" maxWidth="166.0" prefHeight="27.0" prefWidth="166.0">
+         <children>
+            <GridPane maxWidth="149.0" prefHeight="27.0" prefWidth="137.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="73.75" minWidth="0.0" prefWidth="15.75" />
+                  <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="138.5" minWidth="10.0" prefWidth="133.25" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ProgressBar id="pb_healthbar_enemy" prefHeight="20.0" prefWidth="120.0" progress="0.73" stylesheets="@../styles/styles_progressbar.css" GridPane.columnIndex="1" />
+                  <ImageView fitHeight="28.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Heart.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </ImageView>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="124.0">
+                     <children>
+                        <Label id="label_EnemyCurrentHealth" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="18.0" minHeight="18.0" minWidth="22.0" prefHeight="18.0" prefWidth="17.0" text="100" textAlignment="RIGHT" />
+                        <Label id="label_EnemyMaxHealth" alignment="CENTER" contentDisplay="CENTER" maxHeight="18.0" minHeight="18.0" minWidth="29.0" prefHeight="18.0" prefWidth="29.0" text="/ 100" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="1.0" left="50.0" />
+                     </GridPane.margin>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
+      <Label id="label_enemyname_stance" text="dragonname_stance">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>

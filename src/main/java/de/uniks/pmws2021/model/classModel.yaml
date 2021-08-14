@@ -1,0 +1,293 @@
+- c: 	ClassModel
+  classes: 	dungeon 	enemy 	hero 	heroStat 	attackStat 	defenceStat
+  defaultCollectionType: 	c1
+  defaultPropertyStyle: 	Bean
+  defaultRoleType: 	"java.util.ArrayList<%s>"
+  mainJavaDir: 	"src/main/java"
+  packageName: 	de.uniks.pmws2021.model
+  packageSrcFolder: 	"src/main/java/de/uniks/pmws2021/model"
+
+- dungeon: 	Clazz
+  attributes: 	dungeon_name
+  model: 	c
+  modified: 	false
+  name: 	Dungeon
+  propertyStyle: 	Bean
+  roles: 	dungeon_enemies 	dungeon_hero
+
+- enemy: 	Clazz
+  attributes: 	enemy_name 	enemy_lp 	enemy_coins 	enemy_atk 	enemy_def 	enemy_stance
+  model: 	c
+  modified: 	false
+  name: 	Enemy
+  propertyStyle: 	Bean
+  roles: 	enemy_dungeon 	enemy_next 	enemy_previous 	enemy_attacking
+
+- hero: 	Clazz
+  attributes: 	hero_name 	hero_lp 	hero_coins 	hero_mode
+  model: 	c
+  modified: 	false
+  name: 	Hero
+  propertyStyle: 	Bean
+  roles: 	hero_dungeon 	hero_attacking 	hero_stats
+
+- heroStat: 	Clazz
+  attributes: 	heroStat_level 	heroStat_value 	heroStat_cost
+  model: 	c
+  modified: 	false
+  name: 	HeroStat
+  propertyStyle: 	Bean
+  roles: 	heroStat_hero
+  subClasses: 	attackStat 	defenceStat
+
+- attackStat: 	Clazz
+  model: 	c
+  modified: 	false
+  name: 	AttackStat
+  propertyStyle: 	Bean
+  superClass: 	heroStat
+
+- defenceStat: 	Clazz
+  model: 	c
+  modified: 	false
+  name: 	DefenceStat
+  propertyStyle: 	Bean
+  superClass: 	heroStat
+
+- c1: 	CollectionType
+  implClass: 	class java.util.ArrayList
+  implTemplate: 	"java.util.ArrayList<%s>"
+  itf: 	org.fulib.classmodel.CollectionInterface.List
+  qualifiedImplName: 	java.util.ArrayList
+  simpleImplName: 	ArrayList
+
+- dungeon_name: 	Attribute
+  clazz: 	dungeon
+  id: 	Dungeon_name
+  modified: 	false
+  name: 	name
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- dungeon_enemies: 	AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	dungeon
+  collectionType: 	c1
+  id: 	Dungeon_enemies
+  modified: 	false
+  name: 	enemies
+  other: 	enemy_dungeon
+  propertyStyle: 	Bean
+  roleType: 	"java.util.ArrayList<%s>"
+
+- dungeon_hero: 	AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	dungeon
+  id: 	Dungeon_hero
+  modified: 	false
+  name: 	hero
+  other: 	hero_dungeon
+  propertyStyle: 	Bean
+
+- enemy_name: 	Attribute
+  clazz: 	enemy
+  id: 	Enemy_name
+  modified: 	false
+  name: 	name
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- enemy_lp: 	Attribute
+  clazz: 	enemy
+  id: 	Enemy_lp
+  modified: 	false
+  name: 	lp
+  propertyStyle: 	Bean
+  type: 	int
+  typeSignature: 	int
+
+- enemy_coins: 	Attribute
+  clazz: 	enemy
+  id: 	Enemy_coins
+  modified: 	false
+  name: 	coins
+  propertyStyle: 	Bean
+  type: 	int
+  typeSignature: 	int
+
+- enemy_atk: 	Attribute
+  clazz: 	enemy
+  id: 	Enemy_atk
+  modified: 	false
+  name: 	atk
+  propertyStyle: 	Bean
+  type: 	int
+  typeSignature: 	int
+
+- enemy_def: 	Attribute
+  clazz: 	enemy
+  id: 	Enemy_def
+  modified: 	false
+  name: 	def
+  propertyStyle: 	Bean
+  type: 	int
+  typeSignature: 	int
+
+- enemy_stance: 	Attribute
+  clazz: 	enemy
+  id: 	Enemy_stance
+  modified: 	false
+  name: 	stance
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- enemy_dungeon: 	AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	enemy
+  id: 	Enemy_dungeon
+  modified: 	false
+  name: 	dungeon
+  other: 	dungeon_enemies
+  propertyStyle: 	Bean
+
+- enemy_next: 	AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	enemy
+  id: 	Enemy_next
+  modified: 	false
+  name: 	next
+  other: 	enemy_previous
+  propertyStyle: 	Bean
+
+- enemy_previous: 	AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	enemy
+  id: 	Enemy_previous
+  modified: 	false
+  name: 	previous
+  other: 	enemy_next
+  propertyStyle: 	Bean
+
+- enemy_attacking: 	AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	enemy
+  id: 	Enemy_attacking
+  modified: 	false
+  name: 	attacking
+  other: 	hero_attacking
+  propertyStyle: 	Bean
+
+- hero_name: 	Attribute
+  clazz: 	hero
+  id: 	Hero_name
+  modified: 	false
+  name: 	name
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- hero_lp: 	Attribute
+  clazz: 	hero
+  id: 	Hero_lp
+  modified: 	false
+  name: 	lp
+  propertyStyle: 	Bean
+  type: 	int
+  typeSignature: 	int
+
+- hero_coins: 	Attribute
+  clazz: 	hero
+  id: 	Hero_coins
+  modified: 	false
+  name: 	coins
+  propertyStyle: 	Bean
+  type: 	int
+  typeSignature: 	int
+
+- hero_mode: 	Attribute
+  clazz: 	hero
+  id: 	Hero_mode
+  modified: 	false
+  name: 	mode
+  propertyStyle: 	Bean
+  type: 	String
+  typeSignature: 	String
+
+- hero_dungeon: 	AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	hero
+  id: 	Hero_dungeon
+  modified: 	false
+  name: 	dungeon
+  other: 	dungeon_hero
+  propertyStyle: 	Bean
+
+- hero_attacking: 	AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	hero
+  id: 	Hero_attacking
+  modified: 	false
+  name: 	attacking
+  other: 	enemy_attacking
+  propertyStyle: 	Bean
+
+- hero_stats: 	AssocRole
+  aggregation: 	false
+  cardinality: 	42
+  clazz: 	hero
+  collectionType: 	c1
+  id: 	Hero_stats
+  modified: 	false
+  name: 	stats
+  other: 	heroStat_hero
+  propertyStyle: 	Bean
+  roleType: 	"java.util.ArrayList<%s>"
+
+- heroStat_level: 	Attribute
+  clazz: 	heroStat
+  id: 	HeroStat_level
+  modified: 	false
+  name: 	level
+  propertyStyle: 	Bean
+  type: 	int
+  typeSignature: 	int
+
+- heroStat_value: 	Attribute
+  clazz: 	heroStat
+  id: 	HeroStat_value
+  modified: 	false
+  name: 	value
+  propertyStyle: 	Bean
+  type: 	int
+  typeSignature: 	int
+
+- heroStat_cost: 	Attribute
+  clazz: 	heroStat
+  id: 	HeroStat_cost
+  modified: 	false
+  name: 	cost
+  propertyStyle: 	Bean
+  type: 	int
+  typeSignature: 	int
+
+- heroStat_hero: 	AssocRole
+  aggregation: 	false
+  cardinality: 	1
+  clazz: 	heroStat
+  id: 	HeroStat_hero
+  modified: 	false
+  name: 	hero
+  other: 	hero_stats
+  propertyStyle: 	Bean
+
