@@ -242,11 +242,13 @@ public class DungeonScreenController {
 
     private void onDungeonEnds(PropertyChangeEvent event) {
         if(model.getHero().getLp() == 0) {
+            // Delete hero
             ResourceManager.deleteHero(model.getHero());
             showHeroSurvivedDungeon(false);
         }
 
         if ((model.getHero().getAttacking().getNext() == null) && (model.getHero().getAttacking().getLp() == 0)) {
+            // Save hero
             ResourceManager.saveHero(model.getHero());
             showHeroSurvivedDungeon(true);
         }

@@ -7,11 +7,15 @@ import de.uniks.pmws2021.model.HeroStat;
 import javafx.scene.image.Image;
 import org.fulib.yaml.YamlIdMap;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class ResourceManager {
 
@@ -23,11 +27,11 @@ public class ResourceManager {
 
 
     public static Image loadIcon(String className) {
-        return new Image(ResourceManager.class.getResource("../images/" + className + ".png").toString());
+        return new Image(ResourceManager.class.getResource("/de/uniks/pmws2021/images/" + className + ".png").toString());
     }
 
     public static String loadStyle(String styleName) {
-        return new ResourceManager().getClass().getResource("../styles/" + styleName + ".css").toExternalForm();
+        return ResourceManager.class.getResource("/de/uniks/pmws2021/styles/" + styleName + ".css").toExternalForm();
     }
 
     // static constructor magic to create the file if absent
@@ -89,8 +93,12 @@ public class ResourceManager {
             // delete existing hero with the same name as the victor
             oldHeroes.removeIf(oldHero -> oldHero.getName().equals((victor.getName())));
 
-            // add copy of victor to list
-            Hero toSave = new Hero(victor).getCopy();
+            // generate clean copy of victor and add to list
+            Optional<HeroStat> heroStatAtk = victor.getStats().stream().filter(stat -> stat instanceof AttackStat).findFirst();
+            AttackStat attackStat = (AttackStat) heroStatAtk.get();
+            Optional<HeroStat> heroStatDef = victor.getStats().stream().filter(stat -> stat instanceof DefenceStat).findFirst();
+            DefenceStat defenceStat = (DefenceStat) heroStatDef.get();
+            Hero toSave = new Hero().setName(victor.getName()).setMode(victor.getMode()).setLp(victor.getLp()).setCoins(victor.getCoins()).withStats(attackStat, defenceStat).setIconNr(victor.getIconNr());
             oldHeroes.add(toSave);
 
             // serialize as yaml

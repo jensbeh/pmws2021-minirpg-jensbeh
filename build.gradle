@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'de.uniks.pmws2021.model'
-version = '0.1.0'
+version = '1.0.0'
 
 repositories {
 	mavenLocal()
@@ -50,3 +50,12 @@ generateScenarioSource {
 }
 
 mainClassName = 'de.uniks.pmws2021.Launcher'
+
+jar {
+	manifest {
+		attributes "Main-Class": "$mainClassName"
+	}
+	from {
+		configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+	}
+}

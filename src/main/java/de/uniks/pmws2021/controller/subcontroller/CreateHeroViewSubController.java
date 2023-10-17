@@ -71,6 +71,10 @@ public class CreateHeroViewSubController {
     // ===========================================================================================
 
     private void buttonCreateAndStartOnClick(ActionEvent actionEvent) {
+        if (tfHeroname.getText().isEmpty()) {
+            return;
+        }
+
         String heroName = tfHeroname.getText();
         String hardmode;
 

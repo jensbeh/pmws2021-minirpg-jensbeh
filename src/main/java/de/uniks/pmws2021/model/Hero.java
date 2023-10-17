@@ -19,7 +19,6 @@ public class Hero
    public static final String PROPERTY_LP = "lp";
    public static final String PROPERTY_COINS = "coins";
    public static final String PROPERTY_ACTION = "action";
-   private Hero copy;
    private String name;
    private String mode;
    private Dungeon dungeon;
@@ -34,10 +33,6 @@ public class Hero
    private boolean doAction;
 
    public Hero() {}
-
-   public Hero (Hero hero) {
-      this.copy = hero;
-   }
 
    public String getName()
    {
@@ -339,9 +334,4 @@ public class Hero
       this.heroId = heroId;
       return this;
    }
-
-   public Hero getCopy() {
-      return copy;
-   }
-
 }

@@ -9,8 +9,10 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 
 import java.util.List;
 
@@ -24,6 +26,8 @@ public class ChooseHeroViewSubController {
     private List<Hero> heroes;
 
     // Interaction
+    private HBox existingHerosBox;
+    private Label noSavedHerosLabel;
     private Button buttonChooseAndStart;
     private Button buttonDeleteHero;
     private ListView<Hero> heroesListView;
@@ -39,6 +43,8 @@ public class ChooseHeroViewSubController {
 
     public void init() {
         // Load all view references
+        existingHerosBox = (HBox) view.lookup("#existing_heros_box");
+        noSavedHerosLabel = (Label) view.lookup("#no_saved_heros_label");
         buttonChooseAndStart = (Button) view.lookup("#button_start");
         buttonDeleteHero = (Button) view.lookup("#button_deleteHero");
         heroesListView = (ListView<Hero>) view.lookup("#listview_heroesList");
@@ -52,6 +58,10 @@ public class ChooseHeroViewSubController {
         // Interaction
         // Load heroes
         heroes = rpgEditor.getLoadedHeroes();
+
+        // Check if there are saved heros for UI
+        updateExistingHerosUI();
+
         // Set ListView Height
         int listMaxHeight;
         if (heroes.size() != 0) {
@@ -121,6 +131,9 @@ public class ChooseHeroViewSubController {
 
             // put heroes on ListView
             this.heroesListView.setItems(FXCollections.observableList(heroes));
+
+            // Check if there are saved heros for UI
+            updateExistingHerosUI();
         }
     }
 
@@ -128,4 +141,15 @@ public class ChooseHeroViewSubController {
     // Additional Methods
     // ===========================================================================================
 
+    private void updateExistingHerosUI() {
+        // Check if there are saved heros for UI
+        if (heroes.isEmpty()) {
+            existingHerosBox.setVisible(false);
+            noSavedHerosLabel.setVisible(true);
+        }
+        else {
+            existingHerosBox.setVisible(true);
+            noSavedHerosLabel.setVisible(false);
+        }
+    }
 }

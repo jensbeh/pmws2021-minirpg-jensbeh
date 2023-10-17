@@ -113,12 +113,12 @@ public class ImageHeroEnemyViewSubController {
                 // enemy attacking
                 if (enemyIsAttacking && !heroIsAttacking) {
                     if (goBack == false) { // Way to
-                        enemyImageView.setX(enemyImageView.getX() + 8);
+                        enemyImageView.setX(enemyImageView.getX() + 4);
                         if (enemyImageView.getX() >= maxEnemyX) {
                             goBack = true;
                         }
                     } else if (goBack == true) { // Way back
-                        enemyImageView.setX(enemyImageView.getX() - 8);
+                        enemyImageView.setX(enemyImageView.getX() - 4);
                         if (enemyImageView.getX() <= initEnemyX) {
                             goBack = false;
                             doneEnemyAnimation = true;
@@ -129,12 +129,12 @@ public class ImageHeroEnemyViewSubController {
                 // hero attacking
                 if (!enemyIsAttacking && heroIsAttacking) {
                     if (goBack == false) { // Way to
-                        heroImageView.setX(heroImageView.getX() - 10);
+                        heroImageView.setX(heroImageView.getX() - 4);
                         if (heroImageView.getX() <= maxHeroX) {
                             goBack = true;
                         }
                     } else if (goBack == true) { // Way back
-                        heroImageView.setX(heroImageView.getX() + 10);
+                        heroImageView.setX(heroImageView.getX() + 4);
                         if (heroImageView.getX() >= initHeroX) {
                             goBack = false;
                             doneHeroAnimation = true;
