@@ -57,7 +57,6 @@ public class AlternateListCellFactory implements Callback<ListView<Hero>, ListCe
                 coins.setText("Coins: " + hero.getCoins());
                 statsCell.getChildren().addAll(atk, def, coins);
 
-                cell.setStyle("-fx-background-color: #2C2F33;");
                 cell.getChildren().addAll(avatar, textCell, statsCell);
 
                 cell.setPrefHeight(avatar.getFitHeight());
